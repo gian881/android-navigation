@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ExploringNavigation</string>
+    <string name="name_hint">Name</string>
+    <string name="age_hint">Age</string>
+    <string name="button_text">Next</string>
+    <string name="street_hint">Street</string>
+    <string name="number_hint">Number</string>
 </resources>

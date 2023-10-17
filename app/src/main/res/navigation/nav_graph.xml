@@ -9,5 +9,19 @@
         android:id="@+id/personalDataFragment"
         android:name="com.example.exploringnavigation.fragments.PersonalDataFragment"
         android:label="PersonalDataFragment"
-        tools:layout="@layout/fragment_personal_data" />
+        tools:layout="@layout/fragment_personal_data">
+        <action
+            android:id="@+id/go_to_addressFragment"
+            app:destination="@id/addressFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addressFragment"
+        android:name="com.example.exploringnavigation.fragments.AddressFragment"
+        android:label="AddressFragment"
+        tools:layout="@layout/fragment_address">
+        <argument
+            android:name="personModel"
+            app:argType="com.example.exploringnavigation.PersonModel" />
+    </fragment>
+
 </navigation>

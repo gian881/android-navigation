@@ -5,22 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.exploringnavigation.PersonModel
-import com.example.exploringnavigation.R
+import com.example.exploringnavigation.databinding.FragmentAddressBinding
 import com.example.exploringnavigation.databinding.FragmentPersonalDataBinding
 import com.example.exploringnavigation.extensions.text
 
-class PersonalDataFragment : Fragment() {
-    private var _binding: FragmentPersonalDataBinding? = null
+class AddressFragment : Fragment() {
+    private var _binding: FragmentAddressBinding? = null
     private val binding get() = _binding!!
-
+    private val args by navArgs<AddressFragmentArgs>()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPersonalDataBinding.inflate(inflater, container, false)
+        _binding = FragmentAddressBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,11 +29,11 @@ class PersonalDataFragment : Fragment() {
 
         binding.btnNext.setOnClickListener {
             val person = PersonModel(
-                name = binding.tilName.text,
-                age = binding.tilAge.text.toInt()
+                street = binding.tilStreet.text,
+                addressNumber = binding.tilNumber.text
             )
-            val directions = PersonalDataFragmentDirections.goToAddressFragment(person)
-            findNavController().navigate(directions)
+            // TODO: Mandar os dados para o outro fragment
+            // TODO: Navegar entre os fragments
         }
 
     }
