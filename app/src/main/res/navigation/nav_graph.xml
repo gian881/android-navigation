@@ -22,6 +22,19 @@
         <argument
             android:name="personModel"
             app:argType="com.example.exploringnavigation.PersonModel" />
+        <action
+            android:id="@+id/go_to_resumeFragment"
+            app:destination="@id/resumeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resumeFragment"
+        android:name="com.example.exploringnavigation.fragments.ResumeFragment"
+        android:label="ResumeFragment"
+        tools:layout="@layout/fragment_resume">
+        <argument
+            android:name="personModel"
+            app:argType="com.example.exploringnavigation.PersonModel" />
+
     </fragment>
 
 </navigation>

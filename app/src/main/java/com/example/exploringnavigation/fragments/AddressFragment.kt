@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.exploringnavigation.PersonModel
 import com.example.exploringnavigation.databinding.FragmentAddressBinding
@@ -28,14 +29,13 @@ class AddressFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnNext.setOnClickListener {
-            val person = PersonModel(
+            val person = args.personModel.copy(
                 street = binding.tilStreet.text,
                 addressNumber = binding.tilNumber.text
             )
-            // TODO: Mandar os dados para o outro fragment
-            // TODO: Navegar entre os fragments
+            val directions = AddressFragmentDirections.goToResumeFragment(person)
+            findNavController().navigate(directions)
         }
-
     }
 
     override fun onDestroyView() {
